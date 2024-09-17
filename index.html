@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CaffiCalc</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="topbar"></div>
+    </header>
+
+    <div class="container">
+      <div class="beans">
+        <h1>How much daily caffeine intake can affect your health?</h1>
+        <p>Let's find out!</p>
+      </div>
+
+      <main>
+        <h2>Caffeine Intake Questionnaire</h2>
+
+        <div class="question">
+          <label for="age-question">1. How old are you?</label>
+          <div class="age-box">
+            <label for="age" class="age-label">
+              I am <input type="text" id="age" name="age" class="age-input" placeholder=" "> years old
+            </label>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="caffeine-consumption">2. On average, how much caffeine (in milligrams) do you consume per day?</label>
+          <div class="calendar">
+            <div class="day-header">Sunday</div>
+            <div class="day-header">Monday</div>
+            <div class="day-header">Tuesday</div>
+            <div class="day-header">Wednesday</div>
+            <div class="day-header">Thursday</div>
+            <div class="day-header">Friday</div>
+            <div class="day-header">Saturday</div>
+
+            <div class="day"><input type="text" id="sunday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="monday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="tuesday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="wednesday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="thursday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="friday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="saturday" placeholder="mg"></div>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="weight">3. What is your weight?</label>
+          <div class="weigh-box">
+            <label for="weigh" class="weigh">
+              I weigh <input type="text" id="weigh" name="weigh" class="weigh" placeholder=" "> Killograms
+            </label>
+          </div>
+          
+        </div>
+
+        <button type="button" id="calculateButton">Calculate</button>
+      </main>
+    </div>
+
+    <footer>
+    </footer>
+  </body>
+</html>
