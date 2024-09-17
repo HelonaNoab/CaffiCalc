@@ -144,7 +144,7 @@ button {
   outline: none;
   width: 50px;
 }
-.weight-label {
+.weight-label{
   border: 1px solid #333; 
   padding: 15px 400px 15px 30px;
   display: inline-flex; 
