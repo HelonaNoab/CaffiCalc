@@ -21,6 +21,10 @@ header {
   height: 100vh;
 }
 
+.container-fluid {
+  display: flex; /* Use flexbox for the layout */
+  padding: 0;
+}
 .beans {
   flex: 1;
   background-image: url('beans.jpg');
@@ -173,7 +177,7 @@ button {
   color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
+  width: 520px;
   margin-top: 40px;
   margin-bottom: 30px;
 }
@@ -249,6 +253,7 @@ button {
   font-weight: 400; /* Adjust weight as needed */
   margin-left: 100px;
   margin-top: 10px;
+  margin-bottom: 80px;
   width: 700px;
 }
 
@@ -282,6 +287,7 @@ button {
 .coffeeback h2 {
   width: 1200px;
   font-weight: 100px;
+  font-size: 70px;
 }
 
 /* General styling for the footer */
@@ -291,33 +297,37 @@ button {
   display: flex;
   justify-content: center; /* Center the content horizontally */
   flex-direction: column; /* Stack sections vertically */
-  align-items: center; /* Center the content horizontally */
+  align-items: center;
 }
 
 /* Container for the footer sections */
 .footersection {
   display: flex;
-  justify-content: space-between; /* Distribute space between sections */
+  justify-content: space-between; 
   width: 100%; /* Full width of the footer */
-  max-width: 1300px; /* Max width for better alignment */
+  max-width: 1200px; /* Max width for better alignment */
+  margin-top: 10px;
 }
 
 /* Styling for each section */
 .footersection > div {
   flex: 1; /* Each section takes equal space */
-  box-sizing: border-box; /* Include padding and border in the width */
+  box-sizing: border-box; /* Include padding and border in the width *3
 }
 
 .newsletter, .contact, .social {
   background-color: #333333; /* White background for sections */
-  padding: 20px; /* Space inside each section */
+  padding: 20px 20px 15px 20px; /* Space inside each section */
   border: white 1.2px solid;
+  margin-top: 100px;
 }
 
 .newsletter h4, .contact h4, .social h4 {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 16px;
+  margin-left: 45px;
+  margin-top: 35px;
 }
 .newsletter p, .contact p, .social p {
   font-family: 'Times New Roman', Times, serif;
@@ -326,16 +336,18 @@ button {
   font-style: italic;
   font-weight: 100;
   margin-top: -15px;
+  margin-left: 42px;
 }
-/* Styling the contact details container */
+
 .contact-details {
-  display: flex;        /* Use Flexbox to place the two divs side by side */
+  display: flex; /* Use Flexbox to place the two divs side by side */
   justify-content: space-between; /* Add space between them */
   align-items: flex-start; /* Align items to the top (optional) */
 }
 .contact p {
   position: relative;
   top: -15px; /* Adjust this value to move it upwards */
+  left: 43px;
 }
 
 .contactinfo p, 
@@ -343,18 +355,19 @@ button {
   top: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-size: 15px;
+  font-size: 14px;
   margin: 5px 0;
 }
 
 .contactinfo2 {
   text-align: right;
+  margin-right: 80px;
 }
 
 
 .newsletter input[type="text"] {
   all: unset;
-  width: calc(100% - 140px); /* Full width minus button width */
+  width: calc(100% - 110px); /* Full width minus button width */
   border: none;
   border-bottom: 1.2px solid white;
   font-size: 14px;
@@ -362,13 +375,17 @@ button {
   padding: 10px 10px 12px 0px;
   display: inline;
   outline: none;
+  margin-left: 45px;
+  margin-top: 40px;
 }
 
 .newsletter button {
-  margin-left: -40px;
+  margin-left: -50px;
   border: none;
   color: #fff;
   cursor: pointer;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Contact section styling */
@@ -376,18 +393,28 @@ button {
   margin: 5px 0; /* Space between paragraphs */
 }
 
+.social {
+  text-align: left; /* Aligns content to the left */
+}
+
 .social .facebook, .social .instagram {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-size: cover;
-  margin: 10px auto; /* Center and space out social icons */
   border-radius: 50%;
+  display: inline-block; 
+  margin-bottom: 35px;
+  margin-top: 40px;
+}
+
+.social .facebook {
+  margin-left: 45px;
 }
 
 .facebook {
-  background-image: url('facebook-icon.png'); /* Replace with actual icon */
+  background-image: url('FBicon.gif'); 
 }
 
 .instagram {
-  background-image: url('instagram-icon.png'); /* Replace with actual icon */
+  background-image: url('IGicon.gif');
 }
