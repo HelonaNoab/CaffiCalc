@@ -64,24 +64,36 @@ main {
   width: 50%;
 }
 
+main h2 {
+  font-size: 46px;
+  text-align: center;
+  font-weight: 600;
+  color: #333333;
+  margin-top: 50px;
+}
+
+.age-question {
+  font-size: 20px;
+  text-align: center;
+  margin-left: -420px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.caffiene-consumption {
+  font-size: 20px;
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 585px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-input[type="text"]:focus {
-  border-color: #4CAF50;
-  outline: none;
 }
 
 .calendar {
@@ -312,14 +324,15 @@ button {
 /* Styling for each section */
 .footersection > div {
   flex: 1; /* Each section takes equal space */
-  box-sizing: border-box; /* Include padding and border in the width *3
+  box-sizing: border-box; /
 }
 
 .newsletter, .contact, .social {
-  background-color: #333333; /* White background for sections */
-  padding: 20px 20px 15px 20px; /* Space inside each section */
-  border: white 1.2px solid;
+  background-color: #333333; /* Dark background for sections */
+  padding: 20px 20px 15px 20px; 
+  border: 1.2px solid white;
   margin-top: 100px;
+  margin-bottom: 130px;
 }
 
 .newsletter h4, .contact h4, .social h4 {
@@ -340,7 +353,7 @@ button {
 }
 
 .contact-details {
-  display: flex; /* Use Flexbox to place the two divs side by side */
+  display: flex; 
   justify-content: space-between; /* Add space between them */
   align-items: flex-start; /* Align items to the top (optional) */
 }
@@ -417,4 +430,69 @@ button {
 
 .instagram {
   background-image: url('IGicon.gif');
+}
+
+.cafficalc {
+  text-align: center; /* Centers the h5 heading */
+  margin-bottom: 30px; /* Adds space between the heading and the paragraphs */
+}
+
+.cafficalc h5 {
+  color: white;
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.smallquotes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.left-quote, .right-quote {
+  max-width: 12%; 
+  flex: 1; 
+  margin-top: -80px;
+  line-height: 1.2;
+}
+
+.left-quote {
+  text-align: left;
+  margin-right: 750px; /* Add space between the two items */
+}
+
+.right-quote {
+  text-align: right;
+}
+
+.dividerline {
+  height: 1.2px; /* Line thickness */
+  background-color: white; /* Line color */
+  width: 1200px; /* Adjust the width as needed */
+  margin-top: 20px;
+}
+
+.extrainfo {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.cookies {
+  margin-left: -600px;
+}
+.terms{
+  margin-left: -700px;
+}
+.copyright {
+  margin-right: -600px;
 }
