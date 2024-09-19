@@ -20,6 +20,11 @@ header {
   display: flex;
   height: 100vh;
 }
+.container-fluid {
+  display: flex;
+  /* Use flexbox for the layout */
+  padding: 0;
+}
 
 .beans {
   flex: 1;
@@ -282,8 +287,8 @@ button {
 .coffeeback h2 {
   width: 1200px;
   font-weight: 100px;
+  font-size: 70px;
 }
-
 /* General styling for the footer */
 .footer {
   background-color: #333333; /* Light grey background for footer */
