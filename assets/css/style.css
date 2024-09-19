@@ -34,6 +34,8 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-height: 96vh;
+  box-sizing: border-box;
 }
 
 .beans h1 {
@@ -134,7 +136,7 @@ button {
   text-align: center;
 }
 
-#weight {
+#weigh {
   all: unset;
   border: none;
   border-bottom: 1px solid #333;
@@ -151,6 +153,241 @@ button {
   font-size: 16px; 
   align-items: center;
 }
-.weight-box {
+
+.darkgreybar {
+  background-color: #333;
+  padding: 20px;
+}
+
+.threecaffeine {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adjust space between sections */
+  width: 1390px; /* Fixed width for the container */
+  margin: 0 auto; /* Centers the container */
+}
+
+.section {
+  display: flex; 
+  align-items: center; /* Vertically center the content */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.coffee1, .coffee2, .coffee3 {
+  width: 100px; /* Set a fixed width for the images */
+  height: 100px; /* Set a fixed height for the images */
+  background-size: cover;
+  margin-right: 20px; /* Space between the image and text */
+  border-radius: 10px;
+}
+
+.coffee1 {
+  background-image: url('coffee1.png'); /* Replace with the actual image URL */
+}
+
+.coffee2 {
+  background-image: url('coffee2.png'); /* Replace with the actual image URL */
+}
+
+.coffee3 {
+  background-image: url('coffee3.png'); 
+  margin-right: 10px;
+}
+
+.content {
+  flex: 1; 
+  display: flex;
+  flex-direction: column; /* Stack the h3 and p vertically */
+  justify-content: flex-start; /* Align content to the top */
+}
+
+.content h3 {
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: 100;
+  margin: 0 0 8px 0;
+}
+.content p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13.5px;
+  font-weight: 100px;
+  line-height: 1.3;
+}
+
+.lightgreyback {
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Vertically center the items */
+  background-color: #e6e6e6; /* Add padding around the section */
+}
+
+.coffeecuplarge {
+  background-image: url('coffeecuplarge.png'); 
+  background-size: cover;
+  background-position: center;
+  width: 550px; /* Adjust size as needed */
+  height: 550px; /* Adjust size as needed */
+  margin: 0px 30px 0px 30px;
+}
+
+.content-large {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-large h4 {
+  font-size: 55px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400; /* Adjust weight as needed */
+  margin-left: 100px;
+  margin-top: 10px;
+  width: 700px;
+}
+
+.content-large p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  width: 700px;
+  margin-top: -40px;
+  margin-left: 100px;
+}
+.divider {
+  width: 1.5px; /* Line thickness */
+  background-color: #333; /* Line color */
+  height: 600px; /* Same as the image height */
+}
+.coffeeback {
+  background-image: url('coffeeback.jpg');
+  background-size: cover;
+  background-position: top center;
+  font-size: 57px;
+  height: 600px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 20px;
+}
+
+.coffeeback h2 {
+  width: 1200px;
+  font-weight: 100px;
+}
+
+/* General styling for the footer */
+.footer {
+  background-color: #333333; /* Light grey background for footer */
+  padding: 20px; /* Space around the content */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center the content horizontally */
+}
+
+/* Container for the footer sections */
+.footersection {
+  display: flex;
+  justify-content: space-between; /* Distribute space between sections */
+  width: 100%; /* Full width of the footer */
+  max-width: 1300px; /* Max width for better alignment */
+}
+
+/* Styling for each section */
+.footersection > div {
+  flex: 1; /* Each section takes equal space */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.newsletter, .contact, .social {
+  background-color: #333333; /* White background for sections */
+  padding: 20px; /* Space inside each section */
+  border: white 1.2px solid;
+}
+
+.newsletter h4, .contact h4, .social h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 16px;
+}
+.newsletter p, .contact p, .social p {
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 100;
+  margin-top: -15px;
+}
+/* Styling the contact details container */
+.contact-details {
+  display: flex;        /* Use Flexbox to place the two divs side by side */
+  justify-content: space-between; /* Add space between them */
+  align-items: flex-start; /* Align items to the top (optional) */
+}
+.contact p {
+  position: relative;
+  top: -15px; /* Adjust this value to move it upwards */
+}
+
+.contactinfo p, 
+.contactinfo2 p {
+  top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.contactinfo2 {
+  text-align: right;
+}
+
+
+.newsletter input[type="text"] {
+  all: unset;
+  width: calc(100% - 140px); /* Full width minus button width */
+  border: none;
+  border-bottom: 1.2px solid white;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 10px 12px 0px;
+  display: inline;
+  outline: none;
+}
+
+.newsletter button {
+  margin-left: -40px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Contact section styling */
+.contact p {
+  margin: 5px 0; /* Space between paragraphs */
+}
+
+.social .facebook, .social .instagram {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  margin: 10px auto; /* Center and space out social icons */
+  border-radius: 50%;
+}
+
+.facebook {
+  background-image: url('facebook-icon.png'); /* Replace with actual icon */
+}
+
+.instagram {
+  background-image: url('instagram-icon.png'); /* Replace with actual icon */
 }
