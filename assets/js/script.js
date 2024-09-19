@@ -1,52 +1,133 @@
-// Add an event listener to the calculate button
-document
-  .getElementById("calculateButton")
-  .addEventListener("click", calculateCaffeineIntake);
+// Save data to localStorage
+function saveToLocalStorage(name, age, gender, weight, dailyCaffeineArray) {
+  const userData = {
+    name: name,
+    age: age,
+    gender: gender,
+    weight: weight,
+    dailyCaffeine: dailyCaffeineArray,
+  };
+  localStorage.setItem("userData", JSON.stringify(userData));
+}
 
-function calculateCaffeineIntake() {
-  // Get user inputs
-  const age = document.getElementById("age").value;
-  const weight = document.getElementById("weigh").value;
-  const caffeineInputs = [
-    document.getElementById("sunday").value,
-    document.getElementById("monday").value,
-    document.getElementById("tuesday").value,
-    document.getElementById("wednesday").value,
-    document.getElementById("thursday").value,
-    document.getElementById("friday").value,
-    document.getElementById("saturday").value,
-  ];
+// Load data from localStorage
+function loadFromLocalStorage() {
+  const data = localStorage.getItem("userData");
+  if (data) {
+    return JSON.parse(data);
+  }
+  return null;
+}
 
-  // Validate age and weight inputs
-  if (!age || !weight) {
-    alert("Please fill out your age and weight.");
-    return;
+// Function to calculate safe weekly caffeine intake
+function calculateCaffeineIntake(
+  name,
+  age,
+  gender,
+  weight,
+  dailyCaffeineArray
+) {
+  let dailyLimit;
+  let feedback;
+
+  // Define safe daily caffeine limit based on age
+  if (age < 12) {
+    dailyLimit = 0; // No caffeine recommended for children under 12
+    feedback = `Hello ${name}, it's generally recommended that children under 12 avoid caffeine altogether or consume it only in very small amounts, such as in decaffeinated beverages.`;
+  } else if (age >= 12 && age <= 17) {
+    dailyLimit = 100; // Adolescents can safely consume up to 100 mg/day
+    feedback = `Hello ${name}, recommended limits for adolescents (12-17 years) are no more than 100 mg of caffeine per day, which is about the amount in one 8-ounce cup of coffee.`;
+  } else if (age >= 18) {
+    dailyLimit = 400; // Adults can safely consume up to 400 mg/day
+    feedback = `Hello ${name}, for adults, up to 200 mg/day is considered safe according to the FDA, 300–400 mg/day is moderate, and 400+ mg/day is considered excessive.`;
   }
 
-  // Calculate total weekly caffeine intake
-  let totalCaffeine = 0;
-  caffeineInputs.forEach((caffeine) => {
-    if (caffeine) {
-      totalCaffeine += parseFloat(caffeine);
-    }
-  });
+  // Optional: Adjust the limit based on gender
+  if (gender === "female" && age > 18) {
+    dailyLimit = dailyLimit * 0.9; // Reduce by 10% for adult females
+  }
 
-  // Calculate average daily caffeine intake
-  const averageDailyCaffeine = totalCaffeine / 7;
+  // Calculate weekly limit
+  const weeklyLimit = dailyLimit * 7;
 
-  // Store the results in local storage
-  const caffeineData = {
-    age: age,
-    weight: weight,
-    averageDailyCaffeine: averageDailyCaffeine.toFixed(2),
-  };
-
-  localStorage.setItem("caffeineData", JSON.stringify(caffeineData));
-
-  // Display the result
-  alert(
-    `You are ${age} years old, weigh ${weight} kilograms, and your average daily caffeine intake is ${averageDailyCaffeine.toFixed(
-      2
-    )} mg.`
+  // Calculate the user's total caffeine consumption for the week
+  const totalWeeklyCaffeine = dailyCaffeineArray.reduce(
+    (acc, curr) => acc + curr,
+    0
   );
+  const averageDailyCaffeine = totalWeeklyCaffeine / 7;
+
+  // Add to feedback based on the weekly caffeine intake
+  if (totalWeeklyCaffeine > weeklyLimit) {
+    feedback += ` You are consuming more than the recommended weekly limit! Your weekly caffeine intake is ${totalWeeklyCaffeine} mg, but it should be under ${weeklyLimit} mg.`;
+  } else {
+    feedback += ` You are within the safe weekly caffeine intake. Your weekly intake is ${totalWeeklyCaffeine} mg, and your limit is ${weeklyLimit} mg.`;
+  }
+
+  // Additional feedback based on daily intake for weight
+  const minSafeCaffeine = weight * 3; // 3 mg/kg is considered safe minimum
+  const maxSafeCaffeine = weight * 6; // 6 mg/kg is considered the upper limit
+
+  if (averageDailyCaffeine < minSafeCaffeine) {
+    feedback += ` Based on your weight, you might be consuming less caffeine than recommended for optimal health. Consider increasing your intake to at least ${minSafeCaffeine.toFixed(
+      2
+    )} mg/day.`;
+  } else if (averageDailyCaffeine > maxSafeCaffeine) {
+    feedback += ` Be careful! Based on your weight, you're consuming more caffeine than recommended. Try to keep your daily intake under ${maxSafeCaffeine.toFixed(
+      2
+    )} mg/day.`;
+  } else {
+    feedback += ` Your daily caffeine intake is in the healthy range for your weight.`;
+  }
+
+  // Output the result
+  alert(feedback);
 }
+
+// Function to gather input and calculate the result
+function calculateCaffeine() {
+  const name = prompt("What is your name?");
+  const age = parseInt(document.getElementById("age").value);
+  const gender = prompt("What is your gender? (male/female)");
+  const weight = parseFloat(document.getElementById("weigh").value);
+
+  // Get caffeine intake for each day
+  const sun = parseFloat(document.getElementById("sunday").value) || 0;
+  const mon = parseFloat(document.getElementById("monday").value) || 0;
+  const tue = parseFloat(document.getElementById("tuesday").value) || 0;
+  const wed = parseFloat(document.getElementById("wednesday").value) || 0;
+  const thu = parseFloat(document.getElementById("thursday").value) || 0;
+  const fri = parseFloat(document.getElementById("friday").value) || 0;
+  const sat = parseFloat(document.getElementById("saturday").value) || 0;
+
+  // Store the daily intakes in an array
+  const dailyCaffeineArray = [sun, mon, tue, wed, thu, fri, sat];
+
+  // Save data to localStorage
+  saveToLocalStorage(name, age, gender, weight, dailyCaffeineArray);
+
+  // Call the calculateCaffeineIntake function
+  calculateCaffeineIntake(name, age, gender, weight, dailyCaffeineArray);
+}
+
+// Load previous data from localStorage and display it
+window.addEventListener("load", function () {
+  const userData = loadFromLocalStorage();
+  if (userData) {
+    alert(
+      `Welcome back, ${userData.name}! Based on your previous data, let's review your caffeine intake.`
+    );
+    calculateCaffeineIntake(
+      userData.name,
+      userData.age,
+      userData.gender,
+      userData.weight,
+      userData.dailyCaffeine
+    );
+  }
+});
+
+// Event listener for the "Calculate" button
+document
+  .getElementById("calculateButton")
+  .addEventListener("click", calculateCaffeine);
