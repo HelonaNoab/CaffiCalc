@@ -141,4 +141,5 @@ window.addEventListener("load", function () {
 // Event listener for the "Calculate" button
 document
   .getElementById("calculateButton")
+
   .addEventListener("click", calculateCaffeine);

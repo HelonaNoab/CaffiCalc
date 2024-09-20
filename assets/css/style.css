@@ -4,7 +4,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   display: flex;
   flex-direction: column;
-  height: 100vh; 
+  height: 100vh;
 }
 
 header {
@@ -20,6 +20,13 @@ header {
   display: flex;
   height: 100vh;
 }
+
+.container-fluid {
+  display: flex;
+  /* Use flexbox for the layout */
+  padding: 0;
+}
+
 .container-fluid {
   display: flex;
   /* Use flexbox for the layout */
@@ -28,12 +35,12 @@ header {
 
 .beans {
   flex: 1;
-  background-image: url('beans.jpg');
+  background-image: url('../pictures/beans.jpg');
   background-size: 100% auto;
   background-position: center;
   padding: 20px;
   color: #fff;
-  width: 50%; 
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,11 +65,37 @@ header {
 }
 
 main {
-  flex: 1; 
+  flex: 1;
   background-color: #e6e6e6;
   padding: 20px;
   box-sizing: border-box;
   width: 50%;
+}
+
+main h2 {
+  font-size: 46px;
+  text-align: center;
+  font-weight: 600;
+  color: #333333;
+  margin-top: 45px;
+}
+
+.age-question {
+  font-size: 20px;
+  text-align: center;
+  margin-left: -420px;
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+
+.caffiene-consumption {
+  font-size: 20px;
+  text-align: left;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  width: 585px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 label {
@@ -71,29 +104,43 @@ label {
   font-weight: bold;
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-input[type="text"]:focus {
-  border-color: #4CAF50;
-  outline: none;
-}
-
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
+  gap: 0px;
+  margin: 15px 62px 37px 62px;
+  border: #989898 1.5px solid;
+  padding: 5px 0px 20px 0px;
 }
 
 .day-header {
+  position: relative;
   font-weight: bold;
+  margin-top: -5px;
   text-align: center;
+  font-size: 16px;
+  color: white;
+  padding: 2px 1px 2px 1px;
+  background-color: #333333;
+}
+
+.day-header::after {
+  content: "";
+  position: absolute;
+  margin-top: -2px;
+  right: 0;
+  /* Align to the right edge */
+  width: 1.5px;
+  /* Thickness of the extended border */
+  height: 360%;
+  /* Extend to the full height */
+  background-color: #989898;
+  /* Same color as the border */
+}
+
+
+.sat {
+  margin-right: -1px;
 }
 
 .day {
@@ -101,11 +148,15 @@ input[type="text"]:focus {
 }
 
 .day input {
-  width: 100%;
-  padding: 5px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  all: unset;
+  border: none;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+  padding-top: 10px;
+  display: inline;
+  margin: 10px;
+  outline: none;
+  width: 50px;
 }
 
 button {
@@ -120,6 +171,25 @@ button {
   margin-top: 10px;
   cursor: pointer;
 }
+
+#calculateButton {
+  background-color: #333333;
+  width: 594px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  /* Change to block-level */
+  font-size: 20px;
+  margin: 30px auto;
+  /* Center with auto margins */
+  cursor: pointer;
+  height: 60px;
+}
+
 #age {
   all: unset;
   border: none;
@@ -130,33 +200,53 @@ button {
   outline: none;
   width: 50px;
 }
+
 .age-label {
-  border: 1px solid #333; 
+  border: 1px solid #989898;
   padding: 15px 400px 15px 30px;
-  display: inline-flex; 
-  font-size: 16px; 
+  display: inline-flex;
+  font-size: 16px;
   align-items: center;
 }
+
 .age-box {
   text-align: center;
+}
+
+.weight {
+  font-size: 20px;
+  text-align: center;
+  margin-left: -390px;
+  margin-bottom: 20px;
 }
 
 #weigh {
   all: unset;
   border: none;
+  text-align: center;
   border-bottom: 1px solid #333;
   font-size: 14px;
   display: inline;
   margin: 8px;
   outline: none;
   width: 50px;
-}
-.weigh-box {
-  border: 1px solid #333; 
-  padding: 15px 400px 15px 30px;
-  display: inline-flex; 
-  font-size: 16px; 
   align-items: center;
+}
+
+.weigh-box {
+  border: 1px solid #989898;
+  padding: 15px 365px 15px 30px;
+  display: flex;
+  /* Change to flex */
+  justify-content: center;
+  /* Center the content */
+  align-items: center;
+  /* Center items vertically */
+  font-size: 16px;
+  margin: 0 auto;
+  /* Center the box itself */
+  width: fit-content;
+  /* Adjust width to fit content */
 }
 
 .darkgreybar {
@@ -167,48 +257,61 @@ button {
 .threecaffeine {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Adjust space between sections */
-  width: 1390px; /* Fixed width for the container */
-  margin: 0 auto; /* Centers the container */
+  gap: 20px;
+  /* Adjust space between sections */
+  width: 1390px;
+  /* Fixed width for the container */
+  margin: 0 auto;
+  /* Centers the container */
 }
 
 .section {
-  display: flex; 
-  align-items: center; /* Vertically center the content */
+  display: flex;
+  align-items: center;
+  /* Vertically center the content */
   color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
+  width: 520px;
   margin-top: 40px;
   margin-bottom: 30px;
 }
 
-.coffee1, .coffee2, .coffee3 {
-  width: 100px; /* Set a fixed width for the images */
-  height: 100px; /* Set a fixed height for the images */
+.coffee1,
+.coffee2,
+.coffee3 {
+  width: 100px;
+  /* Set a fixed width for the images */
+  height: 100px;
+  /* Set a fixed height for the images */
   background-size: cover;
-  margin-right: 20px; /* Space between the image and text */
+  margin-right: 20px;
+  /* Space between the image and text */
   border-radius: 10px;
 }
 
 .coffee1 {
-  background-image: url('coffee1.png'); /* Replace with the actual image URL */
+  background-image: url('../pictures/coffee1.png');
+  /* Replace with the actual image URL */
 }
 
 .coffee2 {
-  background-image: url('coffee2.png'); /* Replace with the actual image URL */
+  background-image: url('../pictures/coffee2.png');
+  /* Replace with the actual image URL */
 }
 
 .coffee3 {
-  background-image: url('coffee3.png'); 
+  background-image: url('../pictures/coffee3.png');
   margin-right: 10px;
 }
 
 .content {
-  flex: 1; 
+  flex: 1;
   display: flex;
-  flex-direction: column; /* Stack the h3 and p vertically */
-  justify-content: flex-start; /* Align content to the top */
+  flex-direction: column;
+  /* Stack the h3 and p vertically */
+  justify-content: flex-start;
+  /* Align content to the top */
 }
 
 .content h3 {
@@ -218,6 +321,7 @@ button {
   font-weight: 100;
   margin: 0 0 8px 0;
 }
+
 .content p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13.5px;
@@ -226,17 +330,22 @@ button {
 }
 
 .lightgreyback {
-  display: flex; /* Use Flexbox for layout */
-  align-items: center; /* Vertically center the items */
-  background-color: #e6e6e6; /* Add padding around the section */
+  display: flex;
+  /* Use Flexbox for layout */
+  align-items: center;
+  /* Vertically center the items */
+  background-color: #e6e6e6;
+  /* Add padding around the section */
 }
 
 .coffeecuplarge {
-  background-image: url('coffeecuplarge.png'); 
+  background-image: url('../pictures/coffeecuplarge.png');
   background-size: cover;
   background-position: center;
-  width: 550px; /* Adjust size as needed */
-  height: 550px; /* Adjust size as needed */
+  width: 550px;
+  /* Adjust size as needed */
+  height: 550px;
+  /* Adjust size as needed */
   margin: 0px 30px 0px 30px;
 }
 
@@ -251,9 +360,11 @@ button {
   font-size: 55px;
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
-  font-weight: 400; /* Adjust weight as needed */
+  font-weight: 400;
+  /* Adjust weight as needed */
   margin-left: 100px;
   margin-top: 10px;
+  margin-bottom: 80px;
   width: 700px;
 }
 
@@ -265,13 +376,18 @@ button {
   margin-top: -40px;
   margin-left: 100px;
 }
+
 .divider {
-  width: 1.5px; /* Line thickness */
-  background-color: #333; /* Line color */
-  height: 600px; /* Same as the image height */
+  width: 1.5px;
+  /* Line thickness */
+  background-color: #333;
+  /* Line color */
+  height: 600px;
+  /* Same as the image height */
 }
+
 .coffeeback {
-  background-image: url('coffeeback.jpg');
+  background-image: url('../pictures/coffeeback.jpg');
   background-size: cover;
   background-position: top center;
   font-size: 57px;
@@ -289,77 +405,106 @@ button {
   font-weight: 100px;
   font-size: 70px;
 }
+
 /* General styling for the footer */
 .footer {
-  background-color: #333333; /* Light grey background for footer */
-  padding: 20px; /* Space around the content */
+  background-color: #333333;
+  /* Light grey background for footer */
+  padding: 20px;
+  /* Space around the content */
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  flex-direction: column; /* Stack sections vertically */
-  align-items: center; /* Center the content horizontally */
+  justify-content: center;
+  /* Center the content horizontally */
+  flex-direction: column;
+  /* Stack sections vertically */
+  align-items: center;
 }
 
 /* Container for the footer sections */
 .footersection {
   display: flex;
-  justify-content: space-between; /* Distribute space between sections */
-  width: 100%; /* Full width of the footer */
-  max-width: 1300px; /* Max width for better alignment */
+  justify-content: space-between;
+  width: 100%;
+  /* Full width of the footer */
+  max-width: 1200px;
+  /* Max width for better alignment */
+  margin-top: 10px;
 }
 
 /* Styling for each section */
-.footersection > div {
-  flex: 1; /* Each section takes equal space */
-  box-sizing: border-box; /* Include padding and border in the width */
+.footersection>div {
+  flex: 1;
+  /* Each section takes equal space */
+  box-sizing: border-box;/
 }
 
-.newsletter, .contact, .social {
-  background-color: #333333; /* White background for sections */
-  padding: 20px; /* Space inside each section */
-  border: white 1.2px solid;
+.newsletter,
+.contact,
+.social {
+  background-color: #333333;
+  /* Dark background for sections */
+  padding: 20px 20px 15px 20px;
+  border: 1.2px solid white;
+  margin-top: 100px;
+  margin-bottom: 130px;
 }
 
-.newsletter h4, .contact h4, .social h4 {
+.newsletter h4,
+.contact h4,
+.social h4 {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 16px;
+  margin-left: 45px;
+  margin-top: 35px;
 }
-.newsletter p, .contact p, .social p {
+
+.newsletter p,
+.contact p,
+.social p {
   font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: 35px;
   font-style: italic;
   font-weight: 100;
   margin-top: -15px;
-}
-/* Styling the contact details container */
-.contact-details {
-  display: flex;        /* Use Flexbox to place the two divs side by side */
-  justify-content: space-between; /* Add space between them */
-  align-items: flex-start; /* Align items to the top (optional) */
-}
-.contact p {
-  position: relative;
-  top: -15px; /* Adjust this value to move it upwards */
+  margin-left: 42px;
 }
 
-.contactinfo p, 
+.contact-details {
+  display: flex;
+  justify-content: space-between;
+  /* Add space between them */
+  align-items: flex-start;
+  /* Align items to the top (optional) */
+}
+
+.contact p {
+  position: relative;
+  top: -15px;
+  /* Adjust this value to move it upwards */
+  left: 43px;
+}
+
+.contactinfo p,
 .contactinfo2 p {
   top: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
-  font-size: 15px;
+  font-size: 14px;
   margin: 5px 0;
 }
 
 .contactinfo2 {
   text-align: right;
+  margin-right: 80px;
 }
 
 
 .newsletter input[type="text"] {
   all: unset;
-  width: calc(100% - 140px); /* Full width minus button width */
+  width: calc(100% - 110px);
+  /* Full width minus button width */
   border: none;
   border-bottom: 1.2px solid white;
   font-size: 14px;
@@ -367,32 +512,124 @@ button {
   padding: 10px 10px 12px 0px;
   display: inline;
   outline: none;
+  margin-left: 45px;
+  margin-top: 40px;
 }
 
 .newsletter button {
-  margin-left: -40px;
+  margin-left: -50px;
   border: none;
   color: #fff;
   cursor: pointer;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Contact section styling */
 .contact p {
-  margin: 5px 0; /* Space between paragraphs */
+  margin: 5px 0;
+  /* Space between paragraphs */
 }
 
-.social .facebook, .social .instagram {
-  width: 40px;
-  height: 40px;
+.social {
+  text-align: left;
+  /* Aligns content to the left */
+}
+
+.social .facebook,
+.social .instagram {
+  width: 50px;
+  height: 50px;
   background-size: cover;
-  margin: 10px auto; /* Center and space out social icons */
   border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 35px;
+  margin-top: 40px;
+}
+
+.social .facebook {
+  margin-left: 45px;
 }
 
 .facebook {
-  background-image: url('facebook-icon.png'); /* Replace with actual icon */
+  background-image: url('../pictures/FBicon.gif');
 }
 
 .instagram {
-  background-image: url('instagram-icon.png'); /* Replace with actual icon */
+
+  background-image: url('../pictures/IGicon.gif');
+}
+
+.cafficalc {
+  text-align: center;
+  /* Centers the h5 heading */
+  margin-bottom: 30px;
+  /* Adds space between the heading and the paragraphs */
+}
+
+.cafficalc h5 {
+  color: white;
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.smallquotes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.left-quote,
+.right-quote {
+  max-width: 12%;
+  flex: 1;
+  margin-top: -80px;
+  line-height: 1.2;
+}
+
+.left-quote {
+  text-align: left;
+  margin-right: 750px;
+  /* Add space between the two items */
+}
+
+.right-quote {
+  text-align: right;
+}
+
+.dividerline {
+  height: 1.2px;
+  /* Line thickness */
+  background-color: white;
+  /* Line color */
+  width: 1200px;
+  /* Adjust the width as needed */
+  margin-top: 20px;
+}
+
+.extrainfo {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.cookies {
+  margin-left: -600px;
+}
+
+.terms {
+  margin-left: -700px;
+}
+
+.copyright {
+  margin-right: -600px;
 }
