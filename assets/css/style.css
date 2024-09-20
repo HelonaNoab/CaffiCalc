@@ -33,6 +33,10 @@ header {
   padding: 0;
 }
 
+.container-fluid {
+  display: flex; /* Use flexbox for the layout */
+  padding: 0;
+}
 .beans {
   flex: 1;
   background-image: url('../pictures/beans.jpg');
@@ -114,7 +118,11 @@ label {
 }
 
 .day-header {
+<<<<<<< HEAD
   position: relative;
+=======
+  position: relative; 
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   font-weight: bold;
   margin-top: -5px;
   text-align: center;
@@ -122,6 +130,7 @@ label {
   color: white;
   padding: 2px 1px 2px 1px;
   background-color: #333333;
+<<<<<<< HEAD
 }
 
 .day-header::after {
@@ -141,8 +150,24 @@ label {
 
 .sat {
   margin-right: -1px;
+=======
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 }
 
+.day-header::after {
+  content: "";
+  position: absolute;
+  margin-top: -2px;
+  right: 0; /* Align to the right edge */
+  width: 1.5px; /* Thickness of the extended border */
+  height: 360%; /* Extend to the full height */
+  background-color: #989898; /* Same color as the border */
+}
+
+
+.sat {
+  margin-right: -1px;
+}
 .day {
   text-align: center;
 }
@@ -181,6 +206,7 @@ button {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
+<<<<<<< HEAD
   display: block;
   /* Change to block-level */
   font-size: 20px;
@@ -190,6 +216,14 @@ button {
   height: 60px;
 }
 
+=======
+  display: block; /* Change to block-level */
+  font-size: 20px;
+  margin: 30px auto; /* Center with auto margins */
+  cursor: pointer;
+  height: 60px;
+}
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 #age {
   all: unset;
   border: none;
@@ -202,7 +236,11 @@ button {
 }
 
 .age-label {
+<<<<<<< HEAD
   border: 1px solid #989898;
+=======
+  border: 1px solid #989898; 
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   padding: 15px 400px 15px 30px;
   display: inline-flex;
   font-size: 16px;
@@ -219,7 +257,10 @@ button {
   margin-left: -390px;
   margin-bottom: 20px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 #weigh {
   all: unset;
   border: none;
@@ -232,6 +273,7 @@ button {
   width: 50px;
   align-items: center;
 }
+<<<<<<< HEAD
 
 .weigh-box {
   border: 1px solid #989898;
@@ -249,6 +291,18 @@ button {
   /* Adjust width to fit content */
 }
 
+=======
+.weigh-box {
+  border: 1px solid #989898; 
+  padding: 15px 365px 15px 30px;
+  display: flex; /* Change to flex */
+  justify-content: center; /* Center the content */
+  align-items: center; /* Center items vertically */
+  font-size: 16px; 
+  margin: 0 auto; /* Center the box itself */
+  width: fit-content; /* Adjust width to fit content */
+}
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 .darkgreybar {
   background-color: #333;
   padding: 20px;
@@ -413,25 +467,37 @@ button {
   padding: 20px;
   /* Space around the content */
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
   /* Center the content horizontally */
   flex-direction: column;
   /* Stack sections vertically */
+=======
+  justify-content: center; /* Center the content horizontally */
+  flex-direction: column; /* Stack sections vertically */
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   align-items: center;
 }
 
 /* Container for the footer sections */
 .footersection {
   display: flex;
+<<<<<<< HEAD
   justify-content: space-between;
   width: 100%;
   /* Full width of the footer */
   max-width: 1200px;
   /* Max width for better alignment */
+=======
+  justify-content: space-between; 
+  width: 100%; /* Full width of the footer */
+  max-width: 1200px; /* Max width for better alignment */
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   margin-top: 10px;
 }
 
 /* Styling for each section */
+<<<<<<< HEAD
 .footersection>div {
   flex: 1;
   /* Each section takes equal space */
@@ -444,6 +510,16 @@ button {
   background-color: #333333;
   /* Dark background for sections */
   padding: 20px 20px 15px 20px;
+=======
+.footersection > div {
+  flex: 1; /* Each section takes equal space */
+  box-sizing: border-box; /
+}
+
+.newsletter, .contact, .social {
+  background-color: #333333; /* Dark background for sections */
+  padding: 20px 20px 15px 20px; 
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   border: 1.2px solid white;
   margin-top: 100px;
   margin-bottom: 130px;
@@ -469,6 +545,20 @@ button {
   font-weight: 100;
   margin-top: -15px;
   margin-left: 42px;
+<<<<<<< HEAD
+=======
+}
+
+.contact-details {
+  display: flex; 
+  justify-content: space-between; /* Add space between them */
+  align-items: flex-start; /* Align items to the top (optional) */
+}
+.contact p {
+  position: relative;
+  top: -15px; /* Adjust this value to move it upwards */
+  left: 43px;
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 }
 
 .contact-details {
@@ -503,8 +593,12 @@ button {
 
 .newsletter input[type="text"] {
   all: unset;
+<<<<<<< HEAD
   width: calc(100% - 110px);
   /* Full width minus button width */
+=======
+  width: calc(100% - 110px); /* Full width minus button width */
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   border: none;
   border-bottom: 1.2px solid white;
   font-size: 14px;
@@ -532,17 +626,28 @@ button {
 }
 
 .social {
+<<<<<<< HEAD
   text-align: left;
   /* Aligns content to the left */
 }
 
 .social .facebook,
 .social .instagram {
+=======
+  text-align: left; /* Aligns content to the left */
+}
+
+.social .facebook, .social .instagram {
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   width: 50px;
   height: 50px;
   background-size: cover;
   border-radius: 50%;
+<<<<<<< HEAD
   display: inline-block;
+=======
+  display: inline-block; 
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   margin-bottom: 35px;
   margin-top: 40px;
 }
@@ -552,6 +657,7 @@ button {
 }
 
 .facebook {
+<<<<<<< HEAD
   background-image: url('../pictures/FBicon.gif');
 }
 
@@ -565,6 +671,18 @@ button {
   /* Centers the h5 heading */
   margin-bottom: 30px;
   /* Adds space between the heading and the paragraphs */
+=======
+  background-image: url('FBicon.gif'); 
+}
+
+.instagram {
+  background-image: url('IGicon.gif');
+}
+
+.cafficalc {
+  text-align: center; /* Centers the h5 heading */
+  margin-bottom: 30px; /* Adds space between the heading and the paragraphs */
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 }
 
 .cafficalc h5 {
@@ -584,18 +702,28 @@ button {
   font-size: 15px;
 }
 
+<<<<<<< HEAD
 .left-quote,
 .right-quote {
   max-width: 12%;
   flex: 1;
+=======
+.left-quote, .right-quote {
+  max-width: 12%; 
+  flex: 1; 
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   margin-top: -80px;
   line-height: 1.2;
 }
 
 .left-quote {
   text-align: left;
+<<<<<<< HEAD
   margin-right: 750px;
   /* Add space between the two items */
+=======
+  margin-right: 750px; /* Add space between the two items */
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 }
 
 .right-quote {
@@ -603,12 +731,18 @@ button {
 }
 
 .dividerline {
+<<<<<<< HEAD
   height: 1.2px;
   /* Line thickness */
   background-color: white;
   /* Line color */
   width: 1200px;
   /* Adjust the width as needed */
+=======
+  height: 1.2px; /* Line thickness */
+  background-color: white; /* Line color */
+  width: 1200px; /* Adjust the width as needed */
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
   margin-top: 20px;
 }
 
@@ -625,11 +759,17 @@ button {
 .cookies {
   margin-left: -600px;
 }
+<<<<<<< HEAD
 
 .terms {
   margin-left: -700px;
 }
 
+=======
+.terms{
+  margin-left: -700px;
+}
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 .copyright {
   margin-right: -600px;
 }

@@ -1,5 +1,6 @@
 # Name CaffiCalc
 
+<<<<<<< HEAD
 This application is named CaffiCalc indication that it help users to calculate caffeine intake and also tracks weekly intakes.
 
 ## Description
@@ -23,6 +24,16 @@ Overdosing on caffeine can cause vomiting, palpitations, high blood pressure, an
 ## Visual
 
 ![image](..\CaffiCalc\assets\pictures\image.png)
+=======
+This application is named CaffiCalc which enables users to  personally track and set personal caffeine limits based on health guidelines or your own preferences, and receive tailored recommendations to stay within safe consumption levels.
+
+## Description
+
+Caffeine Calculator is an intuitive app that simplifies tracking and optimizing your daily caffeine intake. With a user-friendly interface, it allows you to input details about your age, weight and daily coffee intake and calculates and return answers if your intake is healthy, moderate and excessive amount.
+
+## Visual
+![Website mockup](assets/css/Bootcamp-Project-1.2.jpg)
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
 
 ## Usage
 
@@ -39,5 +50,9 @@ Excessive Amount
 Tell people where they can go to for help in listed email below.
 
 ## Authors and acknowledgment
+<<<<<<< HEAD
 
 The contributors to this project is Helona Mekuria, Aldo Herrera and Trish Ho.
+=======
+The contributors to this project is Helona Mekuria, Aldo Herrera and Trish Ho.
+>>>>>>> 69a2e1919e15f20c3d56b51feacd865e1e639499
