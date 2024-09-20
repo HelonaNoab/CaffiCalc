@@ -457,6 +457,7 @@ button {
   all: unset;
   width: calc(100% - 110px); /* Full width minus button width */
   border: none;
+  color: white;
   border-bottom: 1.2px solid white;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
@@ -805,3 +806,4 @@ button {
   .copyright {
     margin-right: 0; /* Reset margin for better alignment */
   }
+}
