@@ -48,7 +48,7 @@ function calculateCaffeineIntake(
   }
 
   // Calculate weekly limit
-  const weeklyLimit = dailyLimit * 7;
+  const weeklyLimit = dailyLimit / 7;
 
   // Calculate the user's total caffeine consumption for the week
   const totalWeeklyCaffeine = dailyCaffeineArray.reduce(
@@ -73,7 +73,7 @@ function calculateCaffeineIntake(
       2
     )} mg/day.`;
   } else if (averageDailyCaffeine > maxSafeCaffeine) {
-    feedback += ` Be careful! Based on your weight, you're consuming more caffeine than recommended. Try to keep your daily intake under ${maxSafeCaffeine.toFixed(
+    feedback += ` Be careful! Based on your age, you're consuming more caffeine than recommended. Try to keep your daily intake under ${maxSafeCaffeine.toFixed(
       2
     )} mg/day.`;
   } else {
