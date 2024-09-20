@@ -74,21 +74,21 @@ main h2 {
   text-align: center;
   font-weight: 600;
   color: #333333;
-  margin-top: 50px;
+  margin-top: 45px;
 }
 
 .age-question {
   font-size: 20px;
   text-align: center;
   margin-left: -420px;
-  margin-top: 40px;
+  margin-top: 32px;
   margin-bottom: 20px;
 }
 
 .caffiene-consumption {
   font-size: 20px;
   text-align: left;
-  margin-top: 40px;
+  margin-top: 35px;
   margin-bottom: 20px;
   width: 585px;
   margin-left: auto;
@@ -104,24 +104,51 @@ label {
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
+  gap: 0px;
+  margin: 15px 62px 37px 62px;
+  border: #989898 1.5px solid;
+  padding: 5px 0px 20px 0px;
 }
 
 .day-header {
+  position: relative; 
   font-weight: bold;
+  margin-top: -5px;
   text-align: center;
+  font-size: 16px;
+  color: white;
+  padding: 2px 1px 2px 1px;
+  background-color: #333333;
 }
 
+.day-header::after {
+  content: "";
+  position: absolute;
+  margin-top: -2px;
+  right: 0; /* Align to the right edge */
+  width: 1.5px; /* Thickness of the extended border */
+  height: 360%; /* Extend to the full height */
+  background-color: #989898; /* Same color as the border */
+}
+
+
+.sat {
+  margin-right: -1px;
+}
 .day {
   text-align: center;
 }
 
 .day input {
-  width: 100%;
-  padding: 5px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  all: unset;
+  border: none;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+  padding-top: 10px;
+  display: inline;
+  margin: 10px;
+  outline: none;
+  width: 50px;
 }
 
 button {
@@ -136,6 +163,22 @@ button {
   margin-top: 10px;
   cursor: pointer;
 }
+
+#calculateButton {
+  background-color: #333333;
+  width: 594px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block; /* Change to block-level */
+  font-size: 20px;
+  margin: 30px auto; /* Center with auto margins */
+  cursor: pointer;
+  height: 60px;
+}
 #age {
   all: unset;
   border: none;
@@ -147,7 +190,7 @@ button {
   width: 50px;
 }
 .age-label {
-  border: 1px solid #333; 
+  border: 1px solid #989898; 
   padding: 15px 400px 15px 30px;
   display: inline-flex; 
   font-size: 16px; 
@@ -157,24 +200,34 @@ button {
   text-align: center;
 }
 
+.weight {
+  font-size: 20px;
+  text-align: center;
+  margin-left: -390px;
+  margin-bottom: 20px;
+}
 #weigh {
   all: unset;
   border: none;
+  text-align: center;
   border-bottom: 1px solid #333;
   font-size: 14px;
   display: inline;
   margin: 8px;
   outline: none;
   width: 50px;
-}
-.weigh-box {
-  border: 1px solid #333; 
-  padding: 15px 400px 15px 30px;
-  display: inline-flex; 
-  font-size: 16px; 
   align-items: center;
 }
-
+.weigh-box {
+  border: 1px solid #989898; 
+  padding: 15px 365px 15px 30px;
+  display: flex; /* Change to flex */
+  justify-content: center; /* Center the content */
+  align-items: center; /* Center items vertically */
+  font-size: 16px; 
+  margin: 0 auto; /* Center the box itself */
+  width: fit-content; /* Adjust width to fit content */
+}
 .darkgreybar {
   background-color: #333;
   padding: 20px;
@@ -486,7 +539,7 @@ button {
   justify-content: space-between;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 50px;
   margin-bottom: 60px;
 }
