@@ -4,7 +4,11 @@ body {
   font-family: 'Times New Roman', Times, serif;
   display: flex;
   flex-direction: column;
-  height: 100vh; 
+  height: 100vh;
+}
+html, body {
+  height: 100%; /* Ensure body and html take up full height */
+  margin: 0;
 }
 
 header {
@@ -20,6 +24,7 @@ header {
   display: flex;
   height: 100vh;
 }
+
 .container-fluid {
   display: flex;
   /* Use flexbox for the layout */
@@ -27,17 +32,19 @@ header {
 }
 
 .container-fluid {
-  display: flex; /* Use flexbox for the layout */
+  display: flex;
+  /* Use flexbox for the layout */
   padding: 0;
 }
+
 .beans {
   flex: 1;
-  background-image: url('beans.jpg');
+  background-image: url('../pictures/beans.jpg');
   background-size: 100% auto;
   background-position: center;
   padding: 20px;
   color: #fff;
-  width: 50%; 
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,11 +69,16 @@ header {
 }
 
 main {
-  flex: 1; 
+  flex: 1;
   background-color: #e6e6e6;
+  display: flex;
   padding: 20px;
   box-sizing: border-box;
   width: 50%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 main h2 {
@@ -100,10 +112,14 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
+.calendar-container {
+  display: flex;
+  justify-content: center; /* Centers the calendar horizontally */
+}
 
 .calendar {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 84px);
   gap: 0px;
   margin: 15px 62px 37px 62px;
   border: #989898 1.5px solid;
@@ -111,7 +127,7 @@ label {
 }
 
 .day-header {
-  position: relative; 
+  position: relative;
   font-weight: bold;
   margin-top: -5px;
   text-align: center;
@@ -125,16 +141,21 @@ label {
   content: "";
   position: absolute;
   margin-top: -2px;
-  right: 0; /* Align to the right edge */
-  width: 1.5px; /* Thickness of the extended border */
-  height: 360%; /* Extend to the full height */
-  background-color: #989898; /* Same color as the border */
+  right: 0;
+  /* Align to the right edge */
+  width: 1.5px;
+  /* Thickness of the extended border */
+  height: 360%;
+  /* Extend to the full height */
+  background-color: #989898;
+  /* Same color as the border */
 }
 
 
 .sat {
   margin-right: -1px;
 }
+
 .day {
   text-align: center;
 }
@@ -151,6 +172,15 @@ label {
   width: 50px;
 }
 
+button.btn.btn-dark {
+  border: white 1.5px solid;
+  font-size: 28px;
+  background-color: transparent;
+  padding: 20px 80px 20px 80px;
+  margin-top: 80px;
+  border-radius: 50px;
+}
+  
 button {
   background-color: #333333;
   color: white;
@@ -173,12 +203,15 @@ button {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: block; /* Change to block-level */
+  display: block;
+  /* Change to block-level */
   font-size: 20px;
-  margin: 30px auto; /* Center with auto margins */
+  margin: 30px auto;
+  /* Center with auto margins */
   cursor: pointer;
   height: 60px;
 }
+
 #age {
   all: unset;
   border: none;
@@ -189,13 +222,15 @@ button {
   outline: none;
   width: 50px;
 }
+
 .age-label {
-  border: 1px solid #989898; 
+  border: 1px solid #989898;
   padding: 15px 400px 15px 30px;
-  display: inline-flex; 
-  font-size: 16px; 
+  display: inline-flex;
+  font-size: 16px;
   align-items: center;
 }
+
 .age-box {
   text-align: center;
 }
@@ -206,6 +241,7 @@ button {
   margin-left: -390px;
   margin-bottom: 20px;
 }
+
 #weigh {
   all: unset;
   border: none;
@@ -218,16 +254,23 @@ button {
   width: 50px;
   align-items: center;
 }
+
 .weigh-box {
-  border: 1px solid #989898; 
+  border: 1px solid #989898;
   padding: 15px 365px 15px 30px;
-  display: flex; /* Change to flex */
-  justify-content: center; /* Center the content */
-  align-items: center; /* Center items vertically */
-  font-size: 16px; 
-  margin: 0 auto; /* Center the box itself */
-  width: fit-content; /* Adjust width to fit content */
+  display: flex;
+  /* Change to flex */
+  justify-content: center;
+  /* Center the content */
+  align-items: center;
+  /* Center items vertically */
+  font-size: 16px;
+  margin: 0 auto;
+  /* Center the box itself */
+  width: fit-content;
+  /* Adjust width to fit content */
 }
+
 .darkgreybar {
   background-color: #333;
   padding: 20px;
@@ -236,14 +279,18 @@ button {
 .threecaffeine {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Adjust space between sections */
-  width: 1390px; /* Fixed width for the container */
-  margin: 0 auto; /* Centers the container */
+  gap: 20px;
+  /* Adjust space between sections */
+  width: 1390px;
+  /* Fixed width for the container */
+  margin: 0 auto;
+  /* Centers the container */
 }
 
 .section {
-  display: flex; 
-  align-items: center; /* Vertically center the content */
+  display: flex;
+  align-items: center;
+  /* Vertically center the content */
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -252,32 +299,41 @@ button {
   margin-bottom: 30px;
 }
 
-.coffee1, .coffee2, .coffee3 {
-  width: 100px; /* Set a fixed width for the images */
-  height: 100px; /* Set a fixed height for the images */
+.coffee1,
+.coffee2,
+.coffee3 {
+  width: 100px;
+  /* Set a fixed width for the images */
+  height: 100px;
+  /* Set a fixed height for the images */
   background-size: cover;
-  margin-right: 20px; /* Space between the image and text */
+  margin-right: 20px;
+  /* Space between the image and text */
   border-radius: 10px;
 }
 
 .coffee1 {
-  background-image: url('coffee1.png'); /* Replace with the actual image URL */
+  background-image: url('../pictures/coffee1.png');
+  /* Replace with the actual image URL */
 }
 
 .coffee2 {
-  background-image: url('coffee2.png'); /* Replace with the actual image URL */
+  background-image: url('../pictures/coffee2.png');
+  /* Replace with the actual image URL */
 }
 
 .coffee3 {
-  background-image: url('coffee3.png'); 
+  background-image: url('../pictures/coffee3.png');
   margin-right: 10px;
 }
 
 .content {
-  flex: 1; 
+  flex: 1;
   display: flex;
-  flex-direction: column; /* Stack the h3 and p vertically */
-  justify-content: flex-start; /* Align content to the top */
+  flex-direction: column;
+  /* Stack the h3 and p vertically */
+  justify-content: flex-start;
+  /* Align content to the top */
 }
 
 .content h3 {
@@ -287,6 +343,7 @@ button {
   font-weight: 100;
   margin: 0 0 8px 0;
 }
+
 .content p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13.5px;
@@ -295,18 +352,34 @@ button {
 }
 
 .lightgreyback {
-  display: flex; /* Use Flexbox for layout */
-  align-items: center; /* Vertically center the items */
-  background-color: #e6e6e6; /* Add padding around the section */
+  display: flex;
+  /* Use Flexbox for layout */
+  align-items: center;
+  /* Vertically center the items */
+  background-color: #e6e6e6;
+  /* Add padding around the section */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #e6e6e6; /* Background color */
 }
-
+.coffeecontainer {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
 .coffeecuplarge {
-  background-image: url('coffeecuplarge.png'); 
+  background-image: url('../pictures/coffeecuplarge.png');
   background-size: cover;
   background-position: center;
-  width: 550px; /* Adjust size as needed */
-  height: 550px; /* Adjust size as needed */
+  width: 550px;
+  /* Adjust size as needed */
+  height: 550px;
+  /* Adjust size as needed */
   margin: 0px 30px 0px 30px;
+  width: 550px;
+  height: 550px; 
+  margin: 0px 30px 0px -85px;
 }
 
 .content-large {
@@ -320,7 +393,8 @@ button {
   font-size: 55px;
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
-  font-weight: 400; /* Adjust weight as needed */
+  font-weight: 400;
+  /* Adjust weight as needed */
   margin-left: 100px;
   margin-top: 10px;
   margin-bottom: 80px;
@@ -335,13 +409,18 @@ button {
   margin-top: -40px;
   margin-left: 100px;
 }
+
 .divider {
-  width: 1.5px; /* Line thickness */
-  background-color: #333; /* Line color */
-  height: 600px; /* Same as the image height */
+  width: 1.5px;
+  /* Line thickness */
+  background-color: #333;
+  /* Line color */
+  height: 600px;
+  /* Same as the image height */
 }
+
 .coffeeback {
-  background-image: url('coffeeback.jpg');
+  background-image: url('../pictures/coffeeback.jpg');
   background-size: cover;
   background-position: top center;
   font-size: 57px;
@@ -359,47 +438,64 @@ button {
   font-weight: 100px;
   font-size: 70px;
 }
+
 /* General styling for the footer */
+
 .footer {
-  background-color: #333333; /* Light grey background for footer */
-  padding: 20px; /* Space around the content */
+  background-color: #333333;
+  /* Light grey background for footer */
+  padding: 20px;
+  /* Space around the content */
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  flex-direction: column; /* Stack sections vertically */
+  justify-content: center;
+  /* Center the content horizontally */
+  flex-direction: column;
+  /* Stack sections vertically */
   align-items: center;
 }
 
 /* Container for the footer sections */
 .footersection {
   display: flex;
-  justify-content: space-between; 
-  width: 100%; /* Full width of the footer */
-  max-width: 1200px; /* Max width for better alignment */
+  justify-content: space-between;
+  width: 100%;
+  /* Full width of the footer */
+  max-width: 1200px;
+  /* Max width for better alignment */
   margin-top: 10px;
 }
 
 /* Styling for each section */
-.footersection > div {
-  flex: 1; /* Each section takes equal space */
-  box-sizing: border-box; /
+.footersection>div {
+  flex: 1;
+  /* Each section takes equal space */
+  box-sizing: border-box;/
 }
 
-.newsletter, .contact, .social {
-  background-color: #333333; /* Dark background for sections */
-  padding: 20px 20px 15px 20px; 
+.newsletter,
+.contact,
+.social {
+  background-color: #333333;
+  /* Dark background for sections */
+  padding: 20px 20px 15px 20px;
   border: 1.2px solid white;
   margin-top: 100px;
   margin-bottom: 130px;
 }
 
-.newsletter h4, .contact h4, .social h4 {
+.newsletter h4,
+.contact h4,
+.social h4 {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 16px;
   margin-left: 45px;
   margin-top: 35px;
 }
-.newsletter p, .contact p, .social p {
+
+.newsletter p,
+.contact p,
+.social p {
   font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: 35px;
@@ -410,17 +506,21 @@ button {
 }
 
 .contact-details {
-  display: flex; 
-  justify-content: space-between; /* Add space between them */
-  align-items: flex-start; /* Align items to the top (optional) */
+  display: flex;
+  justify-content: space-between;
+  /* Add space between them */
+  align-items: flex-start;
+  /* Align items to the top (optional) */
 }
+
 .contact p {
   position: relative;
-  top: -15px; /* Adjust this value to move it upwards */
+  top: -15px;
+  /* Adjust this value to move it upwards */
   left: 43px;
 }
 
-.contactinfo p, 
+.contactinfo p,
 .contactinfo2 p {
   top: 10px;
   font-family: Arial, Helvetica, sans-serif;
@@ -437,8 +537,10 @@ button {
 
 .newsletter input[type="text"] {
   all: unset;
-  width: calc(100% - 110px); /* Full width minus button width */
+  width: calc(100% - 110px);
+  /* Full width minus button width */
   border: none;
+  color: white;
   border-bottom: 1.2px solid white;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
@@ -460,19 +562,22 @@ button {
 
 /* Contact section styling */
 .contact p {
-  margin: 5px 0; /* Space between paragraphs */
+  margin: 5px 0;
+  /* Space between paragraphs */
 }
 
 .social {
-  text-align: left; /* Aligns content to the left */
+  text-align: left;
+  /* Aligns content to the left */
 }
 
-.social .facebook, .social .instagram {
+.social .facebook,
+.social .instagram {
   width: 50px;
   height: 50px;
   background-size: cover;
   border-radius: 50%;
-  display: inline-block; 
+  display: inline-block;
   margin-bottom: 35px;
   margin-top: 40px;
 }
@@ -482,16 +587,19 @@ button {
 }
 
 .facebook {
-  background-image: url('FBicon.gif'); 
+  background-image: url('../pictures/FBicon.gif');
 }
 
 .instagram {
-  background-image: url('IGicon.gif');
+
+  background-image: url('../pictures/IGicon.gif');
 }
 
 .cafficalc {
-  text-align: center; /* Centers the h5 heading */
-  margin-bottom: 30px; /* Adds space between the heading and the paragraphs */
+  text-align: center;
+  /* Centers the h5 heading */
+  margin-bottom: 30px;
+  /* Adds space between the heading and the paragraphs */
 }
 
 .cafficalc h5 {
@@ -511,16 +619,18 @@ button {
   font-size: 15px;
 }
 
-.left-quote, .right-quote {
-  max-width: 12%; 
-  flex: 1; 
+.left-quote,
+.right-quote {
+  max-width: 12%;
+  flex: 1;
   margin-top: -80px;
   line-height: 1.2;
 }
 
 .left-quote {
   text-align: left;
-  margin-right: 750px; /* Add space between the two items */
+  margin-right: 750px;
+  /* Add space between the two items */
 }
 
 .right-quote {
@@ -528,9 +638,12 @@ button {
 }
 
 .dividerline {
-  height: 1.2px; /* Line thickness */
-  background-color: white; /* Line color */
-  width: 1200px; /* Adjust the width as needed */
+  height: 1.2px;
+  /* Line thickness */
+  background-color: white;
+  /* Line color */
+  width: 1200px;
+  /* Adjust the width as needed */
   margin-top: 20px;
 }
 
@@ -547,9 +660,241 @@ button {
 .cookies {
   margin-left: -600px;
 }
-.terms{
+
+.terms {
   margin-left: -700px;
 }
+
 .copyright {
   margin-right: -600px;
+}
+
+
+@media (min-width: 375px) and (max-width: 414px) {
+  .container-fluid {
+    display: block; /* Change to block layout */
+    padding: 0;
+    height: 100vh; 
+  }
+
+  .beans, main {
+    width: 100%; /* Make both sections take up the full width */
+    height: 50vh; 
+    padding: 20px; /* Add padding to both sections */
+    box-sizing: border-box;
+    order: 1;
+  }
+
+  .beans {
+    margin-bottom: 0; 
+  }
+  .beans h1 {
+    width: 300px;
+    font-size: 40px;
+  }
+  main {
+    height: 970px;
+    order: 2;
+    width: 375;
+  }
+  .greycontainer {
+    width: 360px;
+  }
+  main h2 {
+    margin: 0 auto;
+    width: 360px;
+    font-size: 40px;
+  }
+  .age-question {
+    margin-left: -133px;
+  }
+  #age {
+    width: 50px;
+  }
+  .age-label {
+    padding: 15px 145px 15px 30px;
+  }
+  .age-box {
+    text-align: center;
+  }
+  .caffiene-consumption {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+  }
+  
+  .calendar {
+    grid-template-columns: repeat(7, 47px);
+  }
+
+  .day-header::after {
+    height: 420%; /* Extend to the full height */
+  }
+  
+  .day-header {
+    font-size: 12.5px;
+  }
+  
+  .day input {
+    width: 27px;
+  }
+  .weight {
+    margin-left: -115px;
+  }
+
+  .weigh-box {
+    padding: 15px 105px 15px 30px;
+  }
+  
+  #calculateButton {
+    width: 335px;
+  }
+
+  .darkgreybar {
+    padding: 60px 25px 60px 25px;
+    order: 3;
+    margin-top: 940px;
+  }
+
+  .threecaffeine {
+    flex-direction: column; /* Stack the sections vertically */
+    gap: 20px; /* Adjust space between sections */
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .section {
+    width: 100%; /* Make each section take full width */
+    margin: 0 auto; /* Center the sections */
+  }
+  .lightgreyback {
+    order: 4;
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+  .coffeecontainer {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+  }
+  
+  .coffeecuplarge {
+    width: 370px;
+    height: 370px; 
+    margin: 30px 0; /* Adjusted to give vertical spacing */
+  }
+  
+  
+  .content-large h4 {
+    font-size: 35px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 280px;
+  }
+  
+  .content-large p {
+    width: 280px;
+    margin-left: 10px;
+  }
+  .coffeeback {
+    height: 450px;
+    padding: 20px;
+    margin-top: -600px;
+  }
+  .coffeeback h2 {
+    font-size: 35px;
+    padding: 20px;
+  }
+  .divider {
+    height: 0; /* Same as the image height */
+  }
+  .quote {
+    order: 5;
+    margin-top: 600px;
+  }
+  .footer {
+    order: 6;
+    margin-top: -150px;
+  }
+  
+  /* Container for the footer sections */
+  .footersection {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    justify-content: center; /* Center the sections vertically */
+    align-items: center; /* Center the sections horizontally */
+    width: 100%; /* Full width of the footer */
+    margin-top: 10px;
+  }
+  
+  .footersection > div {
+    flex: none; /* Prevent sections from stretching unevenly */
+    width: 100%; /* Ensure each section takes up the full width */
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+  
+  .newsletter, .contact, .social {
+    margin-top: 20px; 
+    margin-bottom: 5px;
+  }
+  
+  .contactinfo2 {
+    margin-bottom: 45px;
+  }
+  
+  
+  .newsletter input[type="text"] {
+    width: calc(100% - 95px); /* Full width minus button width */
+    margin-bottom: 40px;
+  }
+  
+  .social .facebook, .social .instagram {
+    margin-bottom: 30px;
+  }
+  
+  .social .facebook {
+    margin-left: 45px;
+  }
+  
+  .cafficalc {
+    text-align: center; /* Centers the h5 heading */
+    margin-bottom: 30px; /* Adds space between the heading and the paragraphs */
+  }
+  
+  .cafficalc h5 {
+    font-size: 60px;
+    margin-top: 100px;
+  }
+  
+  .smallquotes {
+    display: none;
+  }
+  
+  .left-quote, .right-quote {
+    display: none;
+  }
+  
+  .dividerline {
+    margin-top: -0px;
+    width: 300px; /* Adjust the width as needed */
+  }
+  
+  .extrainfo {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally if needed */
+  }
+  
+  .cookies {
+    margin-left: 0; /* Reset margin for better alignment */
+  }
+  
+  .terms {
+    margin-left: 0; /* Reset margin for better alignment */
+  }
+  
+  .copyright {
+    margin-right: 0; /* Reset margin for better alignment */
+  }
 }
