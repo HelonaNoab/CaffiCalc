@@ -172,6 +172,15 @@ label {
   width: 50px;
 }
 
+button.btn.btn-dark {
+  border: white 1.5px solid;
+  font-size: 28px;
+  background-color: transparent;
+  padding: 20px 80px 20px 80px;
+  margin-top: 80px;
+  border-radius: 50px;
+}
+  
 button {
   background-color: #333333;
   color: white;
@@ -686,11 +695,14 @@ button {
   main {
     height: 970px;
     order: 2;
+    width: 375;
+  }
+  .greycontainer {
+    width: 360px;
   }
   main h2 {
     margin: 0 auto;
-    margin-top: 20px;
-    width: 380px;
+    width: 360px;
     font-size: 40px;
   }
   .age-question {
@@ -843,14 +855,6 @@ button {
   
   .social .facebook {
     margin-left: 45px;
-  }
-  
-  .facebook {
-    background-image: url('FBicon.gif'); 
-  }
-  
-  .instagram {
-    background-image: url('IGicon.gif');
   }
   
   .cafficalc {
