@@ -8,7 +8,7 @@ Caffeine Calculator is an intuitive app that simplifies tracking and optimizing 
 
 ## Visual
 
-![Website mockup](..\CaffiCalc\assets\pictures\Bootcamp-Project-1.2.jpg)
+![Website mockup](assets/pictures/Bootcamp-Project-1.2.jpg)
 
 ## Usage
 
