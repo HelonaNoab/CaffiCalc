@@ -12,30 +12,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Caffeine Calculator</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-
+  <header>
+    <div class="topbar"></div>
+  </header>
   <div class="container-fluid">
     <div class="beans">
       <h1>How much daily caffeine intake can affect your health?</h1>
@@ -44,10 +23,10 @@
   Lets find out!
 </button>
     </div>
-
+    
     <main>
+      <div class="greycontainer">
       <h2>Caffeine Intake Questionnaire</h2>
-
       <div class="question">
         <label class="age-question">1. How old are you?</label>
         <div class="age-box">
@@ -56,28 +35,30 @@
           </label>
         </div>
       </div>
-
+      
       <div class="question">
         <label class="caffiene-consumption">2. How much caffeine (in mg) do you consume daily? Enter “0” for days without coffee.</label>
-        <div class="calendar">
-          <div class="day-header">Sun</div>
-          <div class="day-header">Mon</div>
-          <div class="day-header">Tues</div>
-          <div class="day-header">Weds</div>
-          <div class="day-header">Thurs</div>
-          <div class="day-header">Fri</div>
-          <div class="day-header sat">Sat</div>
-
-          <div class="day"><input type="text" id="sunday" placeholder="mg"></div>
-          <div class="day"><input type="text" id="monday" placeholder="mg"></div>
-          <div class="day"><input type="text" id="tuesday" placeholder="mg"></div>
-          <div class="day"><input type="text" id="wednesday" placeholder="mg"></div>
-          <div class="day"><input type="text" id="thursday" placeholder="mg"></div>
-          <div class="day"><input type="text" id="friday" placeholder="mg"></div>
-          <div class="day"><input type="text" id="saturday" placeholder="mg"></div>
+        <div class="calendar-container">
+          <div class="calendar">
+            <div class="day-header">Sun</div>
+            <div class="day-header">Mon</div>
+            <div class="day-header">Tues</div>
+            <div class="day-header">Weds</div>
+            <div class="day-header">Thurs</div>
+            <div class="day-header">Fri</div>
+            <div class="day-header sat">Sat</div>
+            
+            <div class="day"><input type="text" id="sunday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="monday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="tuesday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="wednesday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="thursday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="friday" placeholder="mg"></div>
+            <div class="day"><input type="text" id="saturday" placeholder="mg"></div>
+          </div>
         </div>
       </div>
-
+      
       <div class="question">
         <label for="weight" class="weight">3. What is your weight?</label>
         <div class="weigh-box">
@@ -85,10 +66,11 @@
             I weigh <input type="text" id="weigh" name="weigh" class="weigh-input" placeholder=" "> Kilograms
           </label>
         </div>
-
+        
       </div>
-
+      
       <button type="button" id="calculateButton">Calculate</button>
+    </div>
     </main>
   </div>
 
@@ -119,6 +101,7 @@
   </div>
 
   <div class="lightgreyback">
+    <div class="coffeecontainer">
     <div class="coffeecuplarge"></div>
     <div class="divider"></div>
     <div class="content-large">
@@ -127,6 +110,7 @@
         <br><br>
         However, too much caffeine from coffee can lead to unwanted effects, including insomnia, increased anxiety, and jitteriness. Over time, regular consumption may also create dependence, making it difficult to function without it. To reap the benefits while minimizing risks, it’s important to consume coffee in moderation and be mindful of personal tolerance levels.</p>
     </div>
+  </div>
 </div>
 <div class="quote">
   <div class="coffeeback">
