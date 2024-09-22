@@ -27,19 +27,24 @@ function calculateCaffeineIntake(
   weight,
   dailyCaffeineArray
 ) {
+  // If the person is under 12, stop everything and display the message
+  if (age < 12) {
+    alert(
+      `${name}, it's not recommended for kids under 12 to consume caffeine.`
+    );
+    return; // Stop the function if age is under 12
+  }
+
   let dailyLimit;
   let feedback;
 
   // Define safe daily caffeine limit based on age
-  if (age < 12) {
-    dailyLimit = 0; // No caffeine recommended for children under 12
-    feedback = `Hello ${name}, it's generally recommended that children under 12 avoid caffeine altogether or consume it only in very small amounts, such as in decaffeinated beverages.`;
-  } else if (age >= 12 && age <= 17) {
+  if (age >= 12 && age <= 17) {
     dailyLimit = 100; // Adolescents can safely consume up to 100 mg/day
     feedback = `Hello ${name}, recommended limits for adolescents (12-17 years) are no more than 100 mg of caffeine per day, which is about the amount in one 8-ounce cup of coffee.`;
   } else if (age >= 18) {
     dailyLimit = 400; // Adults can safely consume up to 400 mg/day
-    feedback = `Hello ${name}, for adults, up to 200 mg/day is considered safe according to the FDA, 300–400 mg/day is moderate, and 400+ mg/day is considered excessive.`;
+    feedback = `Hello ${name}, for adults, up to 200 mg/day is considered healthy according to the FDA, 300–400 mg/day is moderate, and 400+ mg/day is considered excessive.`;
   }
 
   // Optional: Adjust the limit based on gender
@@ -64,7 +69,13 @@ function calculateCaffeineIntake(
     feedback += ` You are within the safe weekly caffeine intake. Your weekly intake is ${totalWeeklyCaffeine} mg, and your limit is ${weeklyLimit} mg.`;
   }
 
-  // Additional feedback based on daily intake for weight
+  // Stop further weight-based calculations if the person is aged 12-17
+  if (age >= 12 && age <= 17) {
+    alert(feedback); // Output feedback for adolescents
+    return; // Stop here for 12-17 year olds
+  }
+
+  // Additional feedback based on daily intake for weight (for adults only)
   const minSafeCaffeine = weight * 3; // 3 mg/kg is considered safe minimum
   const maxSafeCaffeine = weight * 6; // 6 mg/kg is considered the upper limit
 
@@ -130,4 +141,6 @@ window.addEventListener("load", function () {
 // Event listener for the "Calculate" button
 document
   .getElementById("calculateButton")
+
   .addEventListener("click", calculateCaffeine);
+
